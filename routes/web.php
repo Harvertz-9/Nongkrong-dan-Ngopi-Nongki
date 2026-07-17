@@ -11,7 +11,12 @@ Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/menu', [MenuController::class, 'index']);
 Route::get('/hasil', [MenuController::class, 'hasil']);
+Route::get('/menus/create', [MenuController::class, 'create']);
+Route::post('/menus', [MenuController::class, 'store']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/menus/{menu}/edit', [MenuController::class, 'edit']);
+Route::put('/menus/{menu}', [MenuController::class, 'update']);
+
+Route::delete('/menus/{menu}', [MenuController::class, 'destroy']);
+
+Route::get('/contact', function () { return view('contact'); });
