@@ -62,9 +62,5 @@ class MenuController extends Controller
         return redirect('/menu')->with('success', 'Menu berhasil diperbarui!');
     }
 
-    public function destroy($id){
-        $menu = Menu::findOrFail($id);
-        $menu->delete();
-        return redirect('/menu')->with('success', 'Menu berhasil dihapus!');
-    }
+    
 }

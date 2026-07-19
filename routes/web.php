@@ -17,6 +17,5 @@ Route::post('/menus', [MenuController::class, 'store']);
 Route::get('/menus/{menu}/edit', [MenuController::class, 'edit']);
 Route::put('/menus/{menu}', [MenuController::class, 'update']);
 
-Route::delete('/menus/{menu}', [MenuController::class, 'destroy']);
 
 Route::get('/contact', function () { return view('contact'); });
