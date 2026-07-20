@@ -6,5 +6,32 @@
 @source '../**/*.js';
 
 @theme {
-    --font-Poppins: 'Poppins', sans-serif;
+    --font-sans: 'Poppins', sans-serif;
+
+    --color-cream: #FAF7F2;
+    --color-cream-dark: #F0EBE3;
+    --color-coffee: #4A3228;
+    --color-coffee-light: #6B4C3B;
+    --color-latte: #C4A882;
+    --color-latte-light: #D4C4A8;
+    --color-mocha: #8B6F47;
+    --color-mocha-light: #A68B5B;
+    --color-sage: #8FA886;
+    --color-sage-light: #B5C9AD;
+    --color-terracotta: #C07850;
+    --color-warm-white: #FFFDF9;
 }
+
+[x-cloak] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
