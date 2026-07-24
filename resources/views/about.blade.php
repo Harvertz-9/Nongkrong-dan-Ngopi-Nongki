@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.app')
 @section('title', 'Nongki - Tentang Kami')
 
@@ -36,10 +37,125 @@
                     <p>Nongki lahir dari keinginan sederhana: mencari tempat nongkrong yang nyaman dengan menu yang enak dan harga yang nggak mahal.</p>
                     <p>Kami mulai dari sebuah kedai kecil di sudut kota Denpasar. Dengan semangat dan kopi terbaik, satu per satu pelanggan setia datang dan akhirnya menjadi bagian dari keluarga Nongki.</p>
                     <p>Sekarang, Nongki terus berkembang. Kami hadir secara online agar kamu bisa lihat menu, cek promo, dan pesan kapan saja tanpa harus antri.</p>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Nongki</title>
+    @vite('resources/css/app.css')
+</head>
+
+<body class="font-Poppins bg-stone-50 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-amber-950/95 backdrop-blur-sm shadow-lg sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden text-amber-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <a href="/" class="text-amber-200 text-xl font-bold tracking-wide">☕ Nongki</a>
+                <div class="flex items-center gap-3">
+                    <button class="relative text-amber-200/70 hover:text-amber-200 transition" title="Keranjang">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button class="w-8 h-8 bg-amber-700 rounded-full flex items-center justify-center text-amber-200 hover:bg-amber-600 transition" title="Profil">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block border-t border-amber-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-center gap-8 h-10">
+                    <a href="/" class="text-amber-100/70 hover:text-amber-200 transition text-sm">Home</a>
+                    <a href="/menu" class="text-amber-100/70 hover:text-amber-200 transition text-sm">Menu</a>
+                    <a href="/about" class="text-amber-200 font-semibold text-sm">About</a>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden border-t border-amber-900/50">
+            <div class="px-4 py-3 space-y-2">
+                <a href="/" class="block py-2 text-amber-100/70 hover:text-amber-200 transition">Home</a>
+                <a href="/menu" class="block py-2 text-amber-100/70 hover:text-amber-200 transition">Menu</a>
+                <a href="/about" class="block py-2 text-amber-200 font-semibold">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="bg-gradient-to-br from-amber-900 to-amber-800 text-white py-16 sm:py-20 px-4 mb-12">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2">Tentang Kami</h1>
+            <p class="text-amber-200 text-sm sm:text-base">Cerita di balik secangkir kopi</p>
+        </div>
+    </div>
+
+    <!-- Story -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <h2 class="text-2xl font-bold text-stone-800 mb-6 text-center">Cerita Kami</h2>
+        <div class="bg-white rounded-xl shadow-sm border border-stone-200 p-6 sm:p-8 space-y-4">
+            <p class="text-stone-600 leading-relaxed">
+                Nongki didirikan pada tahun 2020 dengan visi sederhana: menyajikan kopi berkualitas tinggi
+                dengan harga yang terjangkau. Bermula dari sebuah kedai kecil di pinggir jalan, kini Nongki
+                telah berkembang menjadi tempat favorit bagi para pecinta kopi di kota ini.
+            </p>
+            <p class="text-stone-600 leading-relaxed">
+                Kami percaya bahwa secangkir kopi yang baik dapat membawa kebahagiaan dan membangun
+                konektivitas antar manusia. Setiap biji kopi yang kami pilih berasal dari petani lokal
+                terbaik Indonesia, diproses dengan penuh ketelitian untuk menghadirkan cita rasa yang
+                autentik dan konsisten.
+            </p>
+        </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="bg-stone-100 py-16 px-4 mb-16">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-stone-800 mb-8 text-center">Misi Kami</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-stone-200">
+                    <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-stone-800 mb-2">Kopi Berkualitas</h3>
+                    <p class="text-sm text-stone-500">Memilih biji kopi terbaik dari petani lokal untuk cita rasa yang konsisten</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-stone-200">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-stone-800 mb-2">Ramah Lingkungan</h3>
+                    <p class="text-sm text-stone-500">Berkomitmen terhadap praktik berkelanjutan dalam setiap proses</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-stone-200">
+                    <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-stone-800 mb-2">Membangun Komunitas</h3>
+                    <p class="text-sm text-stone-500">Menciptakan ruang yang nyaman untuk berinteraksi dan berbagi cerita</p>
+>>>>>>> 5c924d4 (learn delete & relationship)
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </section>
 
 {{-- TIMELINE --}}
@@ -158,3 +274,38 @@
 </section>
 
 @endsection
+=======
+
+    <!-- Team -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <h2 class="text-2xl font-bold text-stone-800 mb-8 text-center">Tim Kami</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            @foreach([
+                ['nama' => 'Bryan', 'role' => 'Founder'],
+                ['nama' => 'Andi', 'role' => 'Head Barista'],
+                ['nama' => 'Sari', 'role' => 'Manager'],
+            ] as $member)
+                <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-stone-200">
+                    <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-stone-800">{{ $member['nama'] }}</h3>
+                    <p class="text-sm text-amber-700 font-medium">{{ $member['role'] }}</p>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-amber-950 text-amber-200/60 py-8 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-sm">&copy; 2026 Nongki. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+>>>>>>> 5c924d4 (learn delete & relationship)

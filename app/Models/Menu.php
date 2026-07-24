@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Menu extends Model
 {
@@ -10,6 +11,12 @@ class Menu extends Model
         'nama',
         'harga',
         'deskripsi',
-        'tersedia'
+        'gambar',
+        'tersedia',
+        'category_id'
     ];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

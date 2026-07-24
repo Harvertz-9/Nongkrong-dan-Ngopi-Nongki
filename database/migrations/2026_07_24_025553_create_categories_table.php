@@ -11,19 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('harga');
-            $table->text('deskripsi');
-            $table->boolean('tersedia')->default(true);
             $table->timestamps();
-            $table->foreignId('category_id')
-                ->nullable()
-                ->constrained()
-                ->nullOnDelete();
         });
-
     }
 
     /**
@@ -31,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('categories');
     }
 };

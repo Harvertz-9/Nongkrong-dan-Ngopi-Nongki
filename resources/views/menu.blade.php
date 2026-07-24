@@ -49,11 +49,63 @@
             </form>
         </div>
 
+<<<<<<< HEAD
         {{-- Success --}}
         @if(session('success'))
             <div class="bg-sage/10 border border-sage/20 text-sage px-5 py-3 rounded-xl mb-6 text-sm font-medium flex items-center gap-2">
                 <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 {{ session('success') }}
+=======
+        <!-- Success Message -->
+        @if (session('success'))
+            <div id="alert-toast"
+                class="fixed top-20 right-4 z-50 max-w-sm w-full bg-green-50 border border-green-200 text-green-700 rounded-xl shadow-lg overflow-hidden transition-all duration-500 ease-in-out"
+                style="transform: translateX(120%); opacity: 0;">
+                <div class="relative p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="shrink-0">
+                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <p class="text-sm font-medium flex-1">{{ session('success') }}</p>
+                        <button onclick="closeAlert()" class="shrink-0 text-green-400 hover:text-green-600 transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 h-1 bg-green-200 w-full">
+                        <div id="alert-progress" class="h-full bg-green-500 rounded-full" style="width: 100%; transition: width 3.5s linear;"></div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        <!-- Error Message -->
+        @if (session('error'))
+            <div id="alert-toast"
+                class="fixed top-20 right-4 z-50 max-w-sm w-full bg-red-50 border border-red-200 text-red-700 rounded-xl shadow-lg overflow-hidden transition-all duration-500 ease-in-out"
+                style="transform: translateX(120%); opacity: 0;">
+                <div class="relative p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="shrink-0">
+                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                        <p class="text-sm font-medium flex-1">{{ session('error') }}</p>
+                        <button onclick="closeAlert()" class="shrink-0 text-red-400 hover:text-red-600 transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-0 left-0 h-1 bg-red-200 w-full">
+                        <div id="alert-progress" class="h-full bg-red-500 rounded-full" style="width: 100%; transition: width 3.5s linear;"></div>
+                    </div>
+                </div>
+>>>>>>> 5c924d4 (learn delete & relationship)
             </div>
         @endif
 
@@ -63,8 +115,18 @@
 
                 {{-- Desktop --}}
                 <div class="hidden md:block overflow-x-auto">
-                    <table class="w-full text-sm">
+                    <table class="w-full text-sm" style="table-layout: fixed">
+                        <colgroup>
+                           <col class="w-12.5">
+                        <col class="w-37.5">
+                        <col class="w-30">
+                        <col class="w-30">
+                        <col class="w-25">
+                        <col class="w-25">
+                        <col class="w-20">
+                        </colgroup>
                         <thead>
+<<<<<<< HEAD
                             <tr class="bg-coffee text-cream">
                                 <th class="text-left py-3.5 px-5 font-semibold text-xs uppercase tracking-wider w-12">No</th>
                                 <th class="text-left py-3.5 px-5 font-semibold text-xs uppercase tracking-wider">Nama Menu</th>
@@ -97,6 +159,41 @@
                                         @if($menu->harga < 25000)
                                             <span class="inline-flex items-center gap-1 bg-terracotta/10 text-terracotta text-xs font-semibold px-2.5 py-1 rounded-full">
                                                 <span class="w-1.5 h-1.5 bg-terracotta rounded-full"></span>
+=======
+                            <tr class="bg-amber-950 text-amber-100">
+                                <th class="text-left py-3 px-4 font-semibold">No</th>
+                                <th class="text-left py-3 px-4 font-semibold">Nama Menu</th>
+                                <th class="text-left py-3 px-4 font-semibold">Kategori</th>
+                                <th class="text-left py-3 px-4 font-semibold">Deskripsi</th>
+                                <th class="text-right py-3 px-4 font-semibold">Harga</th>
+                                <th class="text-center py-3 px-4 font-semibold">Status</th>
+                                <th class="text-center py-3 px-4 font-semibold">Ketersediaan</th>
+                                <th class="text-center py-3 px-4 font-semibold">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($menus as $index => $menu)
+                                <tr
+                                    class="border-b border-stone-100 hover:bg-amber-50/50 transition {{ $loop->last ? 'border-b-0' : '' }}">
+                                    <td class="py-3 px-4 text-stone-500">{{ $index + 1 }}</td>
+                                    <td class="py-3 px-4">
+                                        <div class="font-semibold text-stone-800 truncate" title="{{ $menu->nama }}">{{ $menu->nama }}</div>
+                                    </td>
+                                    <td class="py-3 px-4">
+                                        <span class="text-stone-600 truncate block" title="{{ $menu->category?->nama ?? '-' }}">{{ $menu->category?->nama ?? '-' }}</span>
+                                    </td>
+                                    <td class="py-3 px-4 text-stone-600 truncate" title="{{ $menu->deskripsi }}">
+                                        {{ $menu->deskripsi }}
+                                    </td>
+                                    <td class="py-3 px-4 text-right font-medium text-stone-800">
+                                        Rp {{ number_format($menu->harga, 0, ',', '.') }}
+                                    </td>
+                                    <td class="py-3 px-4 text-center">
+                                        @if ($menu->harga < 25000)
+                                            <span
+                                                class="inline-flex items-center gap-1 bg-red-100 text-red-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+                                                <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+>>>>>>> 5c924d4 (learn delete & relationship)
                                                 Promo
                                             </span>
                                         @else
@@ -116,10 +213,22 @@
                                             </span>
                                         @endif
                                     </td>
+<<<<<<< HEAD
                                     <td class="py-3.5 px-5">
                                         <div class="flex items-center justify-center gap-1.5">
                                             <a href="{{ route('menu.edit', $menu->id) }}" class="w-8 h-8 rounded-lg bg-latte-light/20 flex items-center justify-center text-mocha hover:bg-coffee hover:text-cream transition-all" title="Edit">
                                                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+=======
+                                    <td class="py-3 px-4 text-center">
+                                        <div class="flex items-center justify-center gap-2">
+                                            <a href="/menus/{{ $menu->id }}/edit"
+                                                class="text-orange-400 hover:text-orange-700 hover:bg-orange-50 p-1.5 rounded-lg transition"
+                                                title="Edit">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                </svg>
+>>>>>>> 5c924d4 (learn delete & relationship)
                                             </a>
                                             <form action="{{ route('menu.destroy', $menu->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus menu ini?')">
                                                 @csrf
@@ -197,4 +306,36 @@
     </div>
 </section>
 
+<<<<<<< HEAD
 @endsection
+=======
+    @if (session('success') || session('error'))
+    <script>
+        (function () {
+            const alert = document.getElementById('alert-toast');
+            const progress = document.getElementById('alert-progress');
+            if (!alert || !progress) return;
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    alert.style.transform = 'translateX(0)';
+                    alert.style.opacity = '1';
+                    progress.style.width = '0%';
+                });
+            });
+
+            const timer = setTimeout(() => closeAlert(), 3700);
+
+            window.closeAlert = function () {
+                clearTimeout(timer);
+                alert.style.transform = 'translateX(120%)';
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            };
+        })();
+    </script>
+    @endif
+
+</body>
+</html>
+>>>>>>> 5c924d4 (learn delete & relationship)
